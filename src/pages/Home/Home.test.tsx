@@ -1,3 +1,4 @@
+import { MemoryRouter } from 'react-router-dom'
 import { vi } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import type { DashboardData, User } from '@/types/content'
@@ -36,7 +37,11 @@ describe('Home', () => {
       error: null,
     })
 
-    render(<Home />)
+    render(
+      <MemoryRouter>
+        <Home />
+      </MemoryRouter>,
+    )
 
     expect(screen.getByText(/Loading.../i)).toBeInTheDocument()
   })
@@ -49,7 +54,11 @@ describe('Home', () => {
       error: 'Erro ao carregar',
     })
 
-    render(<Home />)
+    render(
+      <MemoryRouter>
+        <Home />
+      </MemoryRouter>,
+    )
 
     expect(screen.getByText(/Erro ao carregar/i)).toBeInTheDocument()
   })
@@ -62,7 +71,11 @@ describe('Home', () => {
       error: null,
     })
 
-    render(<Home />)
+    render(
+      <MemoryRouter>
+        <Home />
+      </MemoryRouter>,
+    )
 
     expect(screen.getByText(/Welcome to Client Materials/i)).toBeInTheDocument()
     expect(screen.getByText(/Content Library/i)).toBeInTheDocument()
@@ -70,4 +83,3 @@ describe('Home', () => {
     expect(screen.getByText(/Books/i)).toBeInTheDocument()
   })
 })
-
