@@ -1,0 +1,40 @@
+---
+description: Convenções de estrutura, imports e estilos do projeto
+alwaysApply: true
+---
+
+# Convenções do Projeto
+
+**Ao criar ou alterar componentes, imports, estilos (SCSS) ou estrutura de pastas, consulte e siga as convenções abaixo.**
+
+## Imports absolutos
+
+- Use o alias `@` apontando para `src`.
+- Exemplos: `@/components/Header`, `@/hooks/useApiHome`, `@/types/content`, `@/api/dashboard`, `@/icons`.
+
+## Estrutura de componentes
+
+- Cada componente fica em sua própria pasta: `ComponentName/`.
+- Dentro da pasta: `ComponentName.tsx`, `ComponentName.scss` e `index.tsx`.
+- O `index.tsx` reexporta o componente: `export { ComponentName } from './ComponentName';`
+- Importe pelo nome da pasta, sem repetir o nome do arquivo:
+  - Correto: `import { Header } from '@/components/Header';`
+  - Evitar: `import { Header } from '@/components/Header/Header';`
+
+## SCSS
+
+- Um bloco raiz por arquivo (ex.: `.home`, `.header`); filhos aninhados com classes simples (ex.: `.loading`, `.grid`, `.title`).
+- Não use `&__elemento`; use `.elemento` aninhado no bloco raiz.
+- Variáveis globais: `@use 'styles/variables' as *;` (loadPaths já inclui `src`).
+
+## Ícones / imagens
+
+- SVGs não ficam inline nos componentes. Centralize em `src/icons/index.tsx` (ou pasta equivalente) e importe de lá.
+
+## Hooks por página
+
+- Quando um hook é usado só em uma página, nomeie por contexto (ex.: `useApiHome`) e não receba parâmetros; as chamadas de API ficam dentro do próprio hook.
+
+## Async / APIs
+
+- Prefira async/await. Para várias chamadas em paralelo, inicie todas antes de qualquer `await` ou use `Promise.all`.

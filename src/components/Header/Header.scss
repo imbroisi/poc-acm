@@ -1,0 +1,122 @@
+@use 'styles/variables' as *;
+
+.header {
+  height: $header-height;
+  background: $primary;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  .left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .menu {
+    background: none;
+    border: none;
+    color: white;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  .logo {
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    color: white;
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .link {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 14px;
+    border-radius: 4px;
+    transition: background 0.2s, color 0.2s;
+    &:hover {
+      color: white;
+      background: rgba(255, 255, 255, 0.08);
+    }
+    &.active {
+      color: white;
+      border-bottom: 2px solid $accent;
+      border-radius: 0;
+    }
+  }
+
+  .right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    background: $accent;
+    &:hover {
+      background: $accent-hover;
+    }
+  }
+
+  .btn-icon {
+    font-size: 18px;
+    line-height: 1;
+  }
+
+  .icon {
+    background: none;
+    border: none;
+    color: white;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  .user {
+    margin-left: 4px;
+  }
+
+  .avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: $accent;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 14px;
+  }
+}

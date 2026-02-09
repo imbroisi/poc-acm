@@ -1,0 +1,1 @@
+export { WelcomeArea } from './WelcomeArea';

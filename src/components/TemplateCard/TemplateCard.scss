@@ -1,0 +1,85 @@
+@use 'styles/variables' as *;
+
+.template-card {
+  background: $bg-main;
+  border-radius: $border-radius;
+  box-shadow: $card-shadow;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s;
+  &:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .thumb {
+    height: 130px;
+    background: $bg-subtle;
+    padding: 10px;
+  }
+
+  .body {
+    padding: 14px 16px;
+    flex: 1;
+  }
+
+  .title {
+    margin: 0 0 6px;
+    font-size: 15px;
+    font-weight: 600;
+    color: $text-primary;
+    line-height: 1.3;
+  }
+
+  .meta {
+    margin: 0 0 8px;
+    font-size: 12px;
+    color: $text-muted;
+  }
+
+  .desc {
+    margin: 0 0 10px;
+    font-size: 13px;
+    color: $text-secondary;
+    line-height: 1.45;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .tag {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    padding: 3px 8px;
+    border-radius: 4px;
+
+    &.popular {
+      background: $tag-popular;
+      color: $primary;
+    }
+    &.exposures {
+      background: $tag-exposures;
+      color: #3d2d5c;
+    }
+    &.pensions {
+      background: $tag-pensions;
+      color: #6b4a1a;
+    }
+    &.performance {
+      background: $tag-performance;
+      color: #1a4d1a;
+    }
+    &.default {
+      background: $bg-decor;
+      color: $text-secondary;
+    }
+  }
+}

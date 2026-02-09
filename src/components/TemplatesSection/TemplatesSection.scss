@@ -1,0 +1,57 @@
+@use 'styles/variables' as *;
+
+.templates-section {
+  flex: 1;
+  min-width: 0;
+
+  .head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+  }
+
+  .title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .icon {
+    color: $text-secondary;
+  }
+
+  .title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: $text-primary;
+  }
+
+  .view-all {
+    font-size: 13px;
+    color: $accent;
+    font-weight: 500;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .sub {
+    margin: 12px 0 8px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: $text-muted;
+
+    &.recents {
+      margin-top: 20px;
+    }
+  }
+
+  .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+}

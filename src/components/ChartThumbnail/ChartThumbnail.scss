@@ -1,0 +1,90 @@
+@use 'styles/variables' as *;
+
+.chart-thumb {
+  width: 100%;
+  height: 120px;
+  min-height: 80px;
+  position: relative;
+
+  canvas {
+    max-height: 120px;
+  }
+
+  &.pie {
+    height: 100px;
+    canvas {
+      max-height: 100px;
+    }
+  }
+
+  &.placeholder {
+    background: $bg-subtle;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      gap: 4px;
+      padding: 8px;
+      width: 100%;
+      height: 100%;
+    }
+
+    .cell {
+      background: linear-gradient(135deg, #c5d4e4 0%, #e0e6ed 100%);
+      border-radius: 2px;
+    }
+
+    .circle {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #6bb86b 0%, #9dd49d 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .inner {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    .bar-placeholder {
+      height: 40px;
+      width: 80%;
+      max-width: 120px;
+      background: linear-gradient(90deg, #173f6f 0%, #00b0d8 100%);
+      border-radius: 4px;
+    }
+  }
+
+  &.multi {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 4px;
+    padding: 4px;
+
+    .item {
+      min-height: 0;
+      position: relative;
+      &:first-child {
+        grid-column: 1 / -1;
+        height: 56px;
+      }
+      &.small {
+        grid-column: span 1;
+      }
+      canvas {
+        max-height: 100%;
+      }
+    }
+  }
+}
