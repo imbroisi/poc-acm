@@ -2,7 +2,7 @@ import { http, HttpResponse } from 'msw'
 import type { DashboardData, User } from '@/types/content'
 
 const user: User = {
-  name: 'Maria Martinez',
+  name: 'Mary Smith',
 }
 
 const dashboardData: DashboardData = {
