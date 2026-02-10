@@ -1,20 +1,20 @@
-import { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
-import '@/styles/main.scss';
-import App from '@/App';
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import '@/styles/main.scss'
+import App from '@/App'
 
 async function prepare() {
   if (import.meta.env.DEV) {
-    const { worker } = await import('@/mocks/browser');
-    return worker.start({ onUnhandledRequest: 'bypass', quiet: true });
+    const { worker } = await import('@/mocks/browser')
+    return worker.start({ onUnhandledRequest: 'bypass', quiet: true })
   }
 }
 
-(async () => {
-  await prepare();
+;(async () => {
+  await prepare()
   createRoot(document.getElementById('root')!).render(
     <StrictMode>
       <App />
     </StrictMode>,
-  );
-})();
+  )
+})()

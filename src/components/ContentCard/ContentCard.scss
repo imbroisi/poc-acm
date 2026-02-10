@@ -96,8 +96,14 @@
     height: 20px;
     border-radius: 4px;
     background: $bg-decor;
-    &:nth-child(1) { background: #7eb8da; }
-    &:nth-child(2) { background: #6bb86b; }
-    &:nth-child(3) { background: #e8b88a; }
+    &:nth-child(1) {
+      background: #7eb8da;
+    }
+    &:nth-child(2) {
+      background: #6bb86b;
+    }
+    &:nth-child(3) {
+      background: #e8b88a;
+    }
   }
 }

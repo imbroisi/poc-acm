@@ -21,5 +21,8 @@ export default defineConfig({
     environment: 'jsdom',
     globals: true,
     setupFiles: ['./src/test/setup.ts'],
+    coverage: {
+      exclude: ['**/index.tsx', '**/*.scss', '**/mocks/**', 'public/mockServiceWorker.js'],
+    },
   },
 })

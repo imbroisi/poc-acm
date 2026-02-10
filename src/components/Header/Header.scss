@@ -50,7 +50,9 @@
     font-weight: 500;
     padding: 8px 14px;
     border-radius: 4px;
-    transition: background 0.2s, color 0.2s;
+    transition:
+      background 0.2s,
+      color 0.2s;
     &:hover {
       color: white;
       background: rgba(255, 255, 255, 0.08);

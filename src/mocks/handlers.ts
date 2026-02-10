@@ -1,9 +1,9 @@
-import { http, HttpResponse } from 'msw';
-import type { DashboardData, User } from '@/types/content';
+import { http, HttpResponse } from 'msw'
+import type { DashboardData, User } from '@/types/content'
 
 const user: User = {
   name: 'Maria Martinez',
-};
+}
 
 const dashboardData: DashboardData = {
   contentLibrary: {
@@ -14,7 +14,8 @@ const dashboardData: DashboardData = {
         source: 'Box',
         author: 'TLU Summary',
         date: 'May 14, 2024',
-        description: 'We expect long US Treasury securities to remain range-bound as inflation data and Fed communication drive volatility. We maintain a neutral duration stance.',
+        description:
+          'We expect long US Treasury securities to remain range-bound as inflation data and Fed communication drive volatility. We maintain a neutral duration stance.',
         tags: ['POPULAR', 'SPECIAL TOPIC'],
         chartType: 'line',
       },
@@ -24,7 +25,8 @@ const dashboardData: DashboardData = {
         source: 'Box',
         author: 'Real Assets Investment Group',
         date: 'Apr 27, 2024',
-        description: 'The rise of interest rates has put a downward pressure on valuations across core real estate markets.',
+        description:
+          'The rise of interest rates has put a downward pressure on valuations across core real estate markets.',
         tags: ['MARKET UPDATE'],
         chartType: 'line',
       },
@@ -33,7 +35,8 @@ const dashboardData: DashboardData = {
         title: 'Monthly Market Highlights',
         source: 'Box',
         date: 'Apr 2, 2024',
-        description: 'Equities surged in the first quarter on the back of stronger economic and earnings growth expectations.',
+        description:
+          'Equities surged in the first quarter on the back of stronger economic and earnings growth expectations.',
         tags: ['MARKET UPDATE'],
         chartType: 'scatter',
       },
@@ -45,7 +48,8 @@ const dashboardData: DashboardData = {
         source: 'Insights',
         author: 'Melinda Wright',
         date: 'Apr 23, 2024',
-        description: 'Welcome to the Cambridge Associates 2023 Diversity, Equity, and Inclusion report.',
+        description:
+          'Welcome to the Cambridge Associates 2023 Diversity, Equity, and Inclusion report.',
         tags: ['DEI'],
         chartType: 'grid',
       },
@@ -55,7 +59,8 @@ const dashboardData: DashboardData = {
         source: 'Insights',
         author: 'Simon Hallet, Carla Dalton, JP Gibbons',
         date: 'Apr 23, 2024',
-        description: 'We expect more companies will set science-based targets to reduce their emissions.',
+        description:
+          'We expect more companies will set science-based targets to reduce their emissions.',
         tags: ['OUTLOOK'],
         chartType: 'circle',
       },
@@ -68,7 +73,8 @@ const dashboardData: DashboardData = {
         title: 'Portfolio Update',
         author: 'Jane Doe',
         date: 'May 14, 2024',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         tags: ['POPULAR', 'EXPOSURES'],
         chartType: 'pie',
       },
@@ -77,7 +83,8 @@ const dashboardData: DashboardData = {
         title: 'Quarterly Update',
         author: 'Box',
         date: 'Apr 2, 2024',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         tags: ['PENSIONS'],
         chartType: 'multi',
       },
@@ -86,7 +93,8 @@ const dashboardData: DashboardData = {
         title: 'Pension Monthly Pack',
         author: 'Jane Doe',
         date: 'Apr 23, 2024',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         tags: ['PERFORMANCE'],
         chartType: 'multi',
       },
@@ -97,7 +105,8 @@ const dashboardData: DashboardData = {
         title: 'Manager Factsheet',
         author: 'Box',
         date: 'Apr 2, 2024',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         tags: ['FACTSHEET'],
       },
       {
@@ -105,7 +114,8 @@ const dashboardData: DashboardData = {
         title: 'Risk Exhibit Pack',
         author: 'John Doe',
         date: 'Apr 23, 2024',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         tags: ['RISK'],
         chartType: 'bar',
       },
@@ -114,7 +124,8 @@ const dashboardData: DashboardData = {
         title: 'Attribution Exhibit Pack',
         author: 'Box',
         date: 'Apr 23, 2024',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         tags: ['ATTRIBUTION'],
       },
     ],
@@ -162,13 +173,13 @@ const dashboardData: DashboardData = {
       },
     ],
   },
-};
+}
 
 export const handlers = [
   http.get('/api/user', () => {
-    return HttpResponse.json(user);
+    return HttpResponse.json(user)
   }),
   http.get('/api/dashboard', () => {
-    return HttpResponse.json(dashboardData);
+    return HttpResponse.json(dashboardData)
   }),
-];
+]

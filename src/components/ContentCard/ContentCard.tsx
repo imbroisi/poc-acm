@@ -1,9 +1,9 @@
-import type { ContentItem } from '@/types/content';
-import { ChartThumbnail } from '@/components/ChartThumbnail';
-import './ContentCard.scss';
+import type { ContentItem } from '@/types/content'
+import { ChartThumbnail } from '@/components/ChartThumbnail'
+import './ContentCard.scss'
 
 interface ContentCardProps {
-  item: ContentItem;
+  item: ContentItem
 }
 
 const TAG_CLASS: Record<string, string> = {
@@ -12,14 +12,14 @@ const TAG_CLASS: Record<string, string> = {
   'SPECIAL TOPIC': 'special',
   DEI: 'dei',
   OUTLOOK: 'outlook',
-};
-
-function getTagClass(tag: string): string {
-  return TAG_CLASS[tag] ?? 'default';
 }
 
-export function ContentCard({ item }: ContentCardProps) {
-  const meta = [item.source, item.author, item.date].filter(Boolean).join(' • ');
+function getTagClass(tag: string): string {
+  return TAG_CLASS[tag] ?? 'default'
+}
+
+export const ContentCard = ({ item }: ContentCardProps) => {
+  const meta = [item.source, item.author, item.date].filter(Boolean).join(' • ')
 
   return (
     <article className="content-card">
@@ -44,5 +44,5 @@ export function ContentCard({ item }: ContentCardProps) {
         <span className="icon" />
       </div>
     </article>
-  );
+  )
 }

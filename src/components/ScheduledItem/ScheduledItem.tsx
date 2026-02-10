@@ -1,12 +1,12 @@
-import type { ScheduledBook } from '@/types/content';
-import './ScheduledItem.scss';
+import type { ScheduledBook } from '@/types/content'
+import './ScheduledItem.scss'
 
 interface ScheduledItemProps {
-  item: ScheduledBook;
+  item: ScheduledBook
 }
 
-export function ScheduledItem({ item }: ScheduledItemProps) {
-  const [month, day, year] = item.dateLabel.split(' ');
+export const ScheduledItem = ({ item }: ScheduledItemProps) => {
+  const [month, day, year] = item.dateLabel.split(' ')
   return (
     <article className="scheduled-item">
       <div className="date">
@@ -16,8 +16,10 @@ export function ScheduledItem({ item }: ScheduledItemProps) {
       </div>
       <div className="content">
         <h3 className="title">{item.title}</h3>
-        <p className="meta">{item.client} • {item.type}</p>
+        <p className="meta">
+          {item.client} • {item.type}
+        </p>
       </div>
     </article>
-  );
+  )
 }

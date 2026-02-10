@@ -1,7 +1,7 @@
-import { Link, useLocation } from 'react-router-dom';
-import type { User } from '@/types/content';
-import { IconMenu, IconSearch, IconBell } from '@/icons';
-import './Header.scss';
+import { Link, useLocation } from 'react-router-dom'
+import type { User } from '@/types/content'
+import { IconMenu, IconSearch, IconBell } from '@/icons'
+import './Header.scss'
 
 const NAV_LINKS = [
   { to: '/', label: 'Home' },
@@ -10,14 +10,14 @@ const NAV_LINKS = [
   { to: '/meeting-workspace', label: 'Meeting Workspace' },
   { to: '/my-books', label: 'My Books' },
   { to: '/admin', label: 'Admin' },
-];
+]
 
 interface HeaderProps {
-  user: User | null;
+  user: User | null
 }
 
-export function Header({ user }: HeaderProps) {
-  const location = useLocation();
+export const Header = ({ user }: HeaderProps) => {
+  const location = useLocation()
 
   return (
     <header className="header">
@@ -29,11 +29,7 @@ export function Header({ user }: HeaderProps) {
       </div>
       <nav className="nav">
         {NAV_LINKS.map(({ to, label }) => (
-          <Link
-            key={to}
-            to={to}
-            className={`link ${location.pathname === to ? 'active' : ''}`}
-          >
+          <Link key={to} to={to} className={`link ${location.pathname === to ? 'active' : ''}`}>
             {label}
           </Link>
         ))}
@@ -50,11 +46,9 @@ export function Header({ user }: HeaderProps) {
           <IconBell />
         </button>
         <div className="user" title={user?.name}>
-          <span className="avatar">
-            {user?.name?.charAt(0) ?? 'U'}
-          </span>
+          <span className="avatar">{user?.name?.charAt(0) ?? 'U'}</span>
         </div>
       </div>
     </header>
-  );
+  )
 }

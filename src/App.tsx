@@ -1,31 +1,31 @@
-import { lazy, Suspense, useEffect, useState } from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { Layout } from '@/components/Layout';
-import { Home } from '@/pages/Home/Home';
-import type { User } from '@/types/content';
-import { fetchUser } from '@/api/dashboard';
-import '@/styles/main.scss';
+import { lazy, Suspense, useEffect, useState } from 'react'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { Layout } from '@/components/Layout'
+import { Home } from '@/pages/Home'
+import type { User } from '@/types/content'
+import { fetchUser } from '@/api/dashboard'
+import '@/styles/main.scss'
 
-const ContentLibraryPage = lazy(() => import('@/pages/ContentLibraryPage'));
-const TemplatesPage = lazy(() => import('@/pages/TemplatesPage'));
-const MeetingWorkspacePage = lazy(() => import('@/pages/MeetingWorkspacePage'));
-const MyBooksPage = lazy(() => import('@/pages/MyBooksPage'));
-const AdminPage = lazy(() => import('@/pages/AdminPage'));
+const ContentLibraryPage = lazy(() => import('@/pages/ContentLibraryPage/ContentLibraryPage'))
+const TemplatesPage = lazy(() => import('@/pages/TemplatesPage/TemplatesPage'))
+const MeetingWorkspacePage = lazy(() => import('@/pages/MeetingWorkspacePage/MeetingWorkspacePage'))
+const MyBooksPage = lazy(() => import('@/pages/MyBooksPage/MyBooksPage'))
+const AdminPage = lazy(() => import('@/pages/AdminPage/AdminPage'))
 
-function AppRoutes() {
-  const [user, setUser] = useState<User | null>(null);
+const AppRoutes = () => {
+  const [user, setUser] = useState<User | null>(null)
 
   useEffect(() => {
     async function loadUser() {
       try {
-        const u = await fetchUser();
-        setUser(u);
+        const u = await fetchUser()
+        setUser(u)
       } catch {
-        setUser(null);
+        setUser(null)
       }
     }
-    loadUser();
-  }, []);
+    loadUser()
+  }, [])
 
   return (
     <Layout user={user}>
@@ -41,13 +41,15 @@ function AppRoutes() {
         </Routes>
       </Suspense>
     </Layout>
-  );
+  )
 }
 
-export default function App() {
+const App = () => {
   return (
     <BrowserRouter>
       <AppRoutes />
     </BrowserRouter>
-  );
+  )
 }
+
+export default App

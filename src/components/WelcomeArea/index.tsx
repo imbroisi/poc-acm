@@ -1,1 +1,1 @@
-export { WelcomeArea } from './WelcomeArea';
+export { WelcomeArea } from './WelcomeArea'

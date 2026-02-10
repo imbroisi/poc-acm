@@ -75,12 +75,14 @@
     right: 80px;
     width: 320px;
     height: 200px;
-    background: linear-gradient(135deg,
+    background: linear-gradient(
+      135deg,
       rgba(126, 184, 218, 0.15) 0%,
       rgba(184, 167, 212, 0.12) 25%,
       rgba(232, 184, 138, 0.1) 50%,
       rgba(107, 184, 107, 0.12) 75%,
-      rgba(126, 184, 218, 0.1) 100%);
+      rgba(126, 184, 218, 0.1) 100%
+    );
     border-radius: 50%;
     filter: blur(40px);
     opacity: 0.9;

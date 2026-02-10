@@ -1,15 +1,15 @@
-import { Link } from 'react-router-dom';
-import type { TemplateItem } from '@/types/content';
-import { TemplateCard } from '@/components/TemplateCard';
-import { IconDocument } from '@/icons';
-import './TemplatesSection.scss';
+import { Link } from 'react-router-dom'
+import type { TemplateItem } from '@/types/content'
+import { TemplateCard } from '@/components/TemplateCard'
+import { IconDocument } from '@/icons'
+import './TemplatesSection.scss'
 
 interface TemplatesSectionProps {
-  newPopular: TemplateItem[];
-  recents: TemplateItem[];
+  newPopular: TemplateItem[]
+  recents: TemplateItem[]
 }
 
-export function TemplatesSection({ newPopular, recents }: TemplatesSectionProps) {
+export const TemplatesSection = ({ newPopular, recents }: TemplatesSectionProps) => {
   return (
     <section className="templates-section">
       <div className="head">
@@ -17,7 +17,9 @@ export function TemplatesSection({ newPopular, recents }: TemplatesSectionProps)
           <IconDocument className="icon" />
           <h2 className="title">Templates</h2>
         </div>
-        <Link to="/templates" className="view-all">view all</Link>
+        <Link to="/templates" className="view-all">
+          view all
+        </Link>
       </div>
       <p className="sub">NEW / POPULAR</p>
       <div className="cards">
@@ -32,5 +34,5 @@ export function TemplatesSection({ newPopular, recents }: TemplatesSectionProps)
         ))}
       </div>
     </section>
-  );
+  )
 }
