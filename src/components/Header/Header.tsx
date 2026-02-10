@@ -1,7 +1,7 @@
-import { Link, useLocation } from 'react-router-dom'
-import type { User } from '@/types/content'
-import { IconMenu, IconSearch, IconBell } from '@/icons'
-import './Header.scss'
+import { Link, useLocation } from 'react-router-dom';
+import type { User } from '@/types/content';
+import { IconMenu, IconSearch, IconBell } from '@/icons';
+import './Header.scss';
 
 const NAV_LINKS = [
   { to: '/', label: 'Home' },
@@ -10,14 +10,14 @@ const NAV_LINKS = [
   { to: '/meeting-workspace', label: 'Meeting Workspace' },
   { to: '/my-books', label: 'My Books' },
   { to: '/admin', label: 'Admin' },
-]
+];
 
 interface HeaderProps {
-  user: User | null
+  user: User | null;
 }
 
 export const Header = ({ user }: HeaderProps) => {
-  const location = useLocation()
+  const location = useLocation();
 
   return (
     <header className="header">
@@ -50,5 +50,5 @@ export const Header = ({ user }: HeaderProps) => {
         </div>
       </div>
     </header>
-  )
-}
+  );
+};

@@ -1,12 +1,12 @@
-import type { ScheduledBook } from '@/types/content'
-import './ScheduledItem.scss'
+import type { ScheduledBook } from '@/types/content';
+import './ScheduledItem.scss';
 
 interface ScheduledItemProps {
-  item: ScheduledBook
+  item: ScheduledBook;
 }
 
 export const ScheduledItem = ({ item }: ScheduledItemProps) => {
-  const [month, day, year] = item.dateLabel.split(' ')
+  const [month, day, year] = item.dateLabel.split(' ');
   return (
     <article className="scheduled-item">
       <div className="date">
@@ -21,5 +21,5 @@ export const ScheduledItem = ({ item }: ScheduledItemProps) => {
         </p>
       </div>
     </article>
-  )
-}
+  );
+};

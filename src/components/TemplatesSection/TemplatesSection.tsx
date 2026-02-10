@@ -1,12 +1,12 @@
-import { Link } from 'react-router-dom'
-import type { TemplateItem } from '@/types/content'
-import { TemplateCard } from '@/components/TemplateCard'
-import { IconDocument } from '@/icons'
-import './TemplatesSection.scss'
+import { Link } from 'react-router-dom';
+import type { TemplateItem } from '@/types/content';
+import { TemplateCard } from '@/components/TemplateCard';
+import { IconDocument } from '@/icons';
+import './TemplatesSection.scss';
 
 interface TemplatesSectionProps {
-  newPopular: TemplateItem[]
-  recents: TemplateItem[]
+  newPopular: TemplateItem[];
+  recents: TemplateItem[];
 }
 
 export const TemplatesSection = ({ newPopular, recents }: TemplatesSectionProps) => {
@@ -34,5 +34,5 @@ export const TemplatesSection = ({ newPopular, recents }: TemplatesSectionProps)
         ))}
       </div>
     </section>
-  )
-}
+  );
+};

@@ -1,8 +1,8 @@
-import { IconSearch, IconFilter } from '@/icons'
-import './WelcomeArea.scss'
+import { IconSearch, IconFilter } from '@/icons';
+import './WelcomeArea.scss';
 
 interface WelcomeAreaProps {
-  userName: string
+  userName: string;
 }
 
 export const WelcomeArea = ({ userName }: WelcomeAreaProps) => {
@@ -22,5 +22,5 @@ export const WelcomeArea = ({ userName }: WelcomeAreaProps) => {
         <div className="nodes" />
       </div>
     </section>
-  )
-}
+  );
+};

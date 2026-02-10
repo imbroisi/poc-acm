@@ -1,1 +1,1 @@
-export { TemplateCard } from './TemplateCard'
+export { TemplateCard } from './TemplateCard';

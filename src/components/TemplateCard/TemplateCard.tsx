@@ -1,9 +1,9 @@
-import type { TemplateItem } from '@/types/content'
-import { ChartThumbnail } from '@/components/ChartThumbnail'
-import './TemplateCard.scss'
+import type { TemplateItem } from '@/types/content';
+import { ChartThumbnail } from '@/components/ChartThumbnail';
+import './TemplateCard.scss';
 
 interface TemplateCardProps {
-  item: TemplateItem
+  item: TemplateItem;
 }
 
 const TAG_CLASS: Record<string, string> = {
@@ -14,11 +14,11 @@ const TAG_CLASS: Record<string, string> = {
   FACTSHEET: 'default',
   RISK: 'default',
   ATTRIBUTION: 'default',
-}
+};
 
-function getTagClass(tag: string): string {
-  return TAG_CLASS[tag] ?? 'default'
-}
+const getTagClass = (tag: string): string => {
+  return TAG_CLASS[tag] ?? 'default';
+};
 
 export const TemplateCard = ({ item }: TemplateCardProps) => {
   return (
@@ -41,5 +41,5 @@ export const TemplateCard = ({ item }: TemplateCardProps) => {
         </div>
       </div>
     </article>
-  )
-}
+  );
+};

@@ -1,7 +1,7 @@
-import { MemoryRouter } from 'react-router-dom'
-import { render, screen } from '@testing-library/react'
-import type { ScheduledBook, FavoriteBook } from '@/types/content'
-import { BooksSection } from '../BooksSection'
+import { MemoryRouter } from 'react-router-dom';
+import { render, screen } from '@testing-library/react';
+import type { ScheduledBook, FavoriteBook } from '@/types/content';
+import { BooksSection } from '../BooksSection';
 
 const scheduled: ScheduledBook[] = [
   {
@@ -12,7 +12,7 @@ const scheduled: ScheduledBook[] = [
     date: '2024-06-07',
     dateLabel: 'June 7 2024',
   },
-]
+];
 
 const favorites: FavoriteBook[] = [
   {
@@ -22,7 +22,7 @@ const favorites: FavoriteBook[] = [
     lastUpdated: 'Apr 23, 2024',
     chartType: 'bar',
   },
-]
+];
 
 describe('BooksSection', () => {
   it('renders titles for scheduled and favorite books', () => {
@@ -30,11 +30,11 @@ describe('BooksSection', () => {
       <MemoryRouter>
         <BooksSection scheduled={scheduled} favorites={favorites} />
       </MemoryRouter>,
-    )
+    );
 
-    expect(screen.getByText('Books')).toBeInTheDocument()
-    expect(screen.getByText('June Review')).toBeInTheDocument()
-    expect(screen.getByText('Favorite Book 1')).toBeInTheDocument()
-    expect(screen.getByText(/view all/i)).toBeInTheDocument()
-  })
-})
+    expect(screen.getByText('Books')).toBeInTheDocument();
+    expect(screen.getByText('June Review')).toBeInTheDocument();
+    expect(screen.getByText('Favorite Book 1')).toBeInTheDocument();
+    expect(screen.getByText(/view all/i)).toBeInTheDocument();
+  });
+});

@@ -1,1 +1,1 @@
-export { default } from './ContentLibraryPage'
+export { default } from './ContentLibraryPage';

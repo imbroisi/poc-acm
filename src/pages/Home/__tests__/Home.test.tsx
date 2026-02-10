@@ -1,17 +1,17 @@
-import { MemoryRouter } from 'react-router-dom'
-import { vi } from 'vitest'
-import { render, screen } from '@testing-library/react'
-import type { DashboardData, User } from '@/types/content'
-import { useApiHome } from '@/hooks/useApiHome'
-import { Home } from '../Home'
+import { MemoryRouter } from 'react-router-dom';
+import { vi } from 'vitest';
+import { render, screen } from '@testing-library/react';
+import type { DashboardData, User } from '@/types/content';
+import { useApiHome } from '@/hooks/useApiHome';
+import { Home } from '../Home';
 
-vi.mock('@/hooks/useApiHome')
+vi.mock('@/hooks/useApiHome');
 
-const mockUseApiHome = vi.mocked(useApiHome)
+const mockUseApiHome = vi.mocked(useApiHome);
 
 const baseUser: User = {
   name: 'Maria Martinez',
-}
+};
 
 const baseData: DashboardData = {
   contentLibrary: {
@@ -26,7 +26,7 @@ const baseData: DashboardData = {
     scheduled: [],
     favorites: [],
   },
-}
+};
 
 describe('Home', () => {
   it('renders loading state', () => {
@@ -35,16 +35,16 @@ describe('Home', () => {
       data: null,
       loading: true,
       error: null,
-    })
+    });
 
     render(
       <MemoryRouter>
         <Home />
       </MemoryRouter>,
-    )
+    );
 
-    expect(screen.getByText(/Loading.../i)).toBeInTheDocument()
-  })
+    expect(screen.getByText(/Loading.../i)).toBeInTheDocument();
+  });
 
   it('renders error state', () => {
     mockUseApiHome.mockReturnValue({
@@ -52,16 +52,16 @@ describe('Home', () => {
       data: null,
       loading: false,
       error: 'Erro ao carregar',
-    })
+    });
 
     render(
       <MemoryRouter>
         <Home />
       </MemoryRouter>,
-    )
+    );
 
-    expect(screen.getByText(/Erro ao carregar/i)).toBeInTheDocument()
-  })
+    expect(screen.getByText(/Erro ao carregar/i)).toBeInTheDocument();
+  });
 
   it('renders main sections when data is loaded', () => {
     mockUseApiHome.mockReturnValue({
@@ -69,17 +69,17 @@ describe('Home', () => {
       data: baseData,
       loading: false,
       error: null,
-    })
+    });
 
     render(
       <MemoryRouter>
         <Home />
       </MemoryRouter>,
-    )
+    );
 
-    expect(screen.getByText(/Welcome to Client Materials/i)).toBeInTheDocument()
-    expect(screen.getByText(/Content Library/i)).toBeInTheDocument()
-    expect(screen.getByText(/Templates/i)).toBeInTheDocument()
-    expect(screen.getByText(/Books/i)).toBeInTheDocument()
-  })
-})
+    expect(screen.getByText(/Welcome to Client Materials/i)).toBeInTheDocument();
+    expect(screen.getByText(/Content Library/i)).toBeInTheDocument();
+    expect(screen.getByText(/Templates/i)).toBeInTheDocument();
+    expect(screen.getByText(/Books/i)).toBeInTheDocument();
+  });
+});

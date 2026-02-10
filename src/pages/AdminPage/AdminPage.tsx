@@ -1,4 +1,4 @@
-import './AdminPage.scss'
+import './AdminPage.scss';
 
 const AdminPage = () => {
   return (
@@ -6,7 +6,7 @@ const AdminPage = () => {
       <h1 className="title">Admin</h1>
       <p className="text">This page will be implemented later.</p>
     </div>
-  )
-}
+  );
+};
 
-export default AdminPage
+export default AdminPage;

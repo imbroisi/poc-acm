@@ -1,4 +1,4 @@
-import './MeetingWorkspacePage.scss'
+import './MeetingWorkspacePage.scss';
 
 const MeetingWorkspacePage = () => {
   return (
@@ -6,7 +6,7 @@ const MeetingWorkspacePage = () => {
       <h1 className="title">Meeting Workspace</h1>
       <p className="text">This page will be implemented later.</p>
     </div>
-  )
-}
+  );
+};
 
-export default MeetingWorkspacePage
+export default MeetingWorkspacePage;

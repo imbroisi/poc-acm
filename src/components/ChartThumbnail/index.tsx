@@ -1,1 +1,1 @@
-export { ChartThumbnail } from './ChartThumbnail'
+export { ChartThumbnail } from './ChartThumbnail';

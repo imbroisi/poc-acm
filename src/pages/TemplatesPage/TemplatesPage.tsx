@@ -1,4 +1,4 @@
-import './TemplatesPage.scss'
+import './TemplatesPage.scss';
 
 const TemplatesPage = () => {
   return (
@@ -6,7 +6,7 @@ const TemplatesPage = () => {
       <h1 className="title">Templates</h1>
       <p className="text">This page will be implemented later.</p>
     </div>
-  )
-}
+  );
+};
 
-export default TemplatesPage
+export default TemplatesPage;

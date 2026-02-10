@@ -1,1 +1,1 @@
-export { ScheduledItem } from './ScheduledItem'
+export { ScheduledItem } from './ScheduledItem';

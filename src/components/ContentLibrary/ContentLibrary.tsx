@@ -1,12 +1,12 @@
-import { Link } from 'react-router-dom'
-import type { ContentItem } from '@/types/content'
-import { ContentCard } from '@/components/ContentCard'
-import { IconFolder } from '@/icons'
-import './ContentLibrary.scss'
+import { Link } from 'react-router-dom';
+import type { ContentItem } from '@/types/content';
+import { ContentCard } from '@/components/ContentCard';
+import { IconFolder } from '@/icons';
+import './ContentLibrary.scss';
 
 interface ContentLibraryProps {
-  newPopular: ContentItem[]
-  recents: ContentItem[]
+  newPopular: ContentItem[];
+  recents: ContentItem[];
 }
 
 export const ContentLibrary = ({ newPopular, recents }: ContentLibraryProps) => {
@@ -34,5 +34,5 @@ export const ContentLibrary = ({ newPopular, recents }: ContentLibraryProps) => 
         ))}
       </div>
     </section>
-  )
-}
+  );
+};

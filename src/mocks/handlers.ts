@@ -1,9 +1,9 @@
-import { http, HttpResponse } from 'msw'
-import type { DashboardData, User } from '@/types/content'
+import { http, HttpResponse } from 'msw';
+import type { DashboardData, User } from '@/types/content';
 
 const user: User = {
   name: 'Mary Smith',
-}
+};
 
 const dashboardData: DashboardData = {
   contentLibrary: {
@@ -173,13 +173,13 @@ const dashboardData: DashboardData = {
       },
     ],
   },
-}
+};
 
 export const handlers = [
   http.get('/api/user', () => {
-    return HttpResponse.json(user)
+    return HttpResponse.json(user);
   }),
   http.get('/api/dashboard', () => {
-    return HttpResponse.json(dashboardData)
+    return HttpResponse.json(dashboardData);
   }),
-]
+];

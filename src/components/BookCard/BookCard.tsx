@@ -1,9 +1,9 @@
-import type { FavoriteBook } from '@/types/content'
-import { ChartThumbnail } from '@/components/ChartThumbnail'
-import './BookCard.scss'
+import type { FavoriteBook } from '@/types/content';
+import { ChartThumbnail } from '@/components/ChartThumbnail';
+import './BookCard.scss';
 
 interface BookCardProps {
-  item: FavoriteBook
+  item: FavoriteBook;
 }
 
 export const BookCard = ({ item }: BookCardProps) => {
@@ -22,5 +22,5 @@ export const BookCard = ({ item }: BookCardProps) => {
         <ChartThumbnail type={item.chartType} />
       </div>
     </article>
-  )
-}
+  );
+};

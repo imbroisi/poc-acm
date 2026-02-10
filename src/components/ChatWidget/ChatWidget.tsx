@@ -1,10 +1,10 @@
-import { useState } from 'react'
-import { IconSend } from '@/icons'
-import './ChatWidget.scss'
+import { useState } from 'react';
+import { IconSend } from '@/icons';
+import './ChatWidget.scss';
 
 export const ChatWidget = () => {
-  const [open, setOpen] = useState(false)
-  const [input, setInput] = useState('')
+  const [open, setOpen] = useState(false);
+  const [input, setInput] = useState('');
 
   return (
     <>
@@ -51,5 +51,5 @@ export const ChatWidget = () => {
         </div>
       )}
     </>
-  )
-}
+  );
+};

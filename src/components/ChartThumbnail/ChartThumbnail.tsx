@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useRef } from 'react';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -10,10 +10,10 @@ import {
   Filler,
   Tooltip,
   Legend,
-} from 'chart.js'
-import { Line, Bar, Doughnut } from 'react-chartjs-2'
-import type { ContentItem, TemplateItem, FavoriteBook } from '@/types/content'
-import './ChartThumbnail.scss'
+} from 'chart.js';
+import { Line, Bar, Doughnut } from 'react-chartjs-2';
+import type { ContentItem, TemplateItem, FavoriteBook } from '@/types/content';
+import './ChartThumbnail.scss';
 
 ChartJS.register(
   CategoryScale,
@@ -25,16 +25,16 @@ ChartJS.register(
   Filler,
   Tooltip,
   Legend,
-)
+);
 
-const CHART_COLORS = ['#173f6f', '#00b0d8', '#6bb86b', '#e8b88a', '#b8a7d4', '#d4736e']
+const CHART_COLORS = ['#173f6f', '#00b0d8', '#6bb86b', '#e8b88a', '#b8a7d4', '#d4736e'];
 
-type ChartType = ContentItem['chartType'] | TemplateItem['chartType'] | FavoriteBook['chartType']
+type ChartType = ContentItem['chartType'] | TemplateItem['chartType'] | FavoriteBook['chartType'];
 
 interface ChartThumbnailProps {
-  type?: ChartType
-  title?: string
-  className?: string
+  type?: ChartType;
+  title?: string;
+  className?: string;
 }
 
 const lineData = {
@@ -49,7 +49,7 @@ const lineData = {
       tension: 0.3,
     },
   ],
-}
+};
 
 const barData = {
   labels: ['A', 'B', 'C', 'D', 'E'],
@@ -60,7 +60,7 @@ const barData = {
       backgroundColor: CHART_COLORS,
     },
   ],
-}
+};
 
 const pieData = {
   labels: ['Equity', 'Fixed', 'Alts', 'Cash'],
@@ -71,7 +71,7 @@ const pieData = {
       borderWidth: 0,
     },
   ],
-}
+};
 
 const chartOptions = {
   responsive: true,
@@ -84,10 +84,10 @@ const chartOptions = {
     x: { display: false },
     y: { display: false },
   },
-}
+};
 
 export const ChartThumbnail = ({ type, className = '' }: ChartThumbnailProps) => {
-  const containerRef = useRef<HTMLDivElement>(null)
+  const containerRef = useRef<HTMLDivElement>(null);
 
   if (type === 'grid' || type === 'circle') {
     return (
@@ -105,7 +105,7 @@ export const ChartThumbnail = ({ type, className = '' }: ChartThumbnailProps) =>
           </div>
         )}
       </div>
-    )
+    );
   }
 
   if (type === 'line') {
@@ -113,7 +113,7 @@ export const ChartThumbnail = ({ type, className = '' }: ChartThumbnailProps) =>
       <div className={`chart-thumb ${className}`.trim()}>
         <Line data={lineData} options={chartOptions} />
       </div>
-    )
+    );
   }
 
   if (type === 'bar') {
@@ -130,7 +130,7 @@ export const ChartThumbnail = ({ type, className = '' }: ChartThumbnailProps) =>
           }}
         />
       </div>
-    )
+    );
   }
 
   if (type === 'pie') {
@@ -144,7 +144,7 @@ export const ChartThumbnail = ({ type, className = '' }: ChartThumbnailProps) =>
           }}
         />
       </div>
-    )
+    );
   }
 
   if (type === 'scatter') {
@@ -160,12 +160,12 @@ export const ChartThumbnail = ({ type, className = '' }: ChartThumbnailProps) =>
           pointRadius: 5,
         },
       ],
-    }
+    };
     return (
       <div className={`chart-thumb ${className}`.trim()}>
         <Line data={scatterLineData} options={chartOptions} />
       </div>
-    )
+    );
   }
 
   if (type === 'multi') {
@@ -181,12 +181,12 @@ export const ChartThumbnail = ({ type, className = '' }: ChartThumbnailProps) =>
           <Doughnut data={pieData} options={{ ...chartOptions, cutout: '60%' }} />
         </div>
       </div>
-    )
+    );
   }
 
   return (
     <div className={`chart-thumb placeholder ${className}`.trim()}>
       <div className="bar-placeholder" />
     </div>
-  )
-}
+  );
+};

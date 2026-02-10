@@ -1,1 +1,1 @@
-export { TemplatesSection } from './TemplatesSection'
+export { TemplatesSection } from './TemplatesSection';

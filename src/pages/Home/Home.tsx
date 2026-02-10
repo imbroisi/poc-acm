@@ -1,12 +1,12 @@
-import { WelcomeArea } from '@/components/WelcomeArea'
-import { ContentLibrary } from '@/components/ContentLibrary'
-import { TemplatesSection } from '@/components/TemplatesSection'
-import { BooksSection } from '@/components/BooksSection'
-import { useApiHome } from '@/hooks/useApiHome'
-import './Home.scss'
+import { WelcomeArea } from '@/components/WelcomeArea';
+import { ContentLibrary } from '@/components/ContentLibrary';
+import { TemplatesSection } from '@/components/TemplatesSection';
+import { BooksSection } from '@/components/BooksSection';
+import { useApiHome } from '@/hooks/useApiHome';
+import './Home.scss';
 
 export const Home = () => {
-  const { user, data, loading, error } = useApiHome()
+  const { user, data, loading, error } = useApiHome();
 
   if (loading) {
     return (
@@ -15,7 +15,7 @@ export const Home = () => {
           <p>Loading...</p>
         </div>
       </div>
-    )
+    );
   }
 
   if (error || !data) {
@@ -25,7 +25,7 @@ export const Home = () => {
           <p>{error ?? 'Failed to load dashboard'}</p>
         </div>
       </div>
-    )
+    );
   }
 
   return (
@@ -40,5 +40,5 @@ export const Home = () => {
         <BooksSection scheduled={data.books.scheduled} favorites={data.books.favorites} />
       </div>
     </div>
-  )
-}
+  );
+};
