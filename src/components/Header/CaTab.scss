@@ -1,6 +1,8 @@
 /* Standalone styles for CaTab – copy when using the component in another project */
 
 .ca-tab {
+  position: relative;
+  box-sizing: border-box;
   color: rgba(255, 255, 255, 0.95);
   text-transform: uppercase;
   font-weight: 500;
@@ -10,12 +12,30 @@
   padding: 0 1rem;
   background: none;
   border: none;
-  border-bottom: 4px solid transparent;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   line-height: 1;
+
+  /* Barra indicadora fora do fluxo para não afetar o alinhamento vertical do label */
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: transparent;
+  }
+
+  /* Remove qualquer borda/outline de foco (navegação por teclado) */
+  &:focus,
+  &:focus-visible,
+  &:active {
+    outline: none;
+    box-shadow: none;
+  }
 
   &:hover:not(.ca-tab--disabled) {
     color: #fff;
@@ -24,7 +44,10 @@
   &.ca-tab--selected {
     color: #fff;
     background-color: #2f59a6;
-    border-bottom-color: #fff;
+
+    &::after {
+      background: #fff;
+    }
   }
 
   &.ca-tab--disabled {
