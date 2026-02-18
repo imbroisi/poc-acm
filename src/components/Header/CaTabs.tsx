@@ -48,6 +48,7 @@ export const CaTabs = ({ value, onChange, children, className = '' }: CaTabsProp
   return (
     <div
       role="tablist"
+      tabIndex={0}
       className={['ca-tabs', className].filter(Boolean).join(' ')}
       onKeyDown={handleKeyDown}
     >
