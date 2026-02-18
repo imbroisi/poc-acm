@@ -1,15 +1,73 @@
 @use 'styles/variables' as *;
 
+$tab-bar-bg: #1a408c;
+$tab-bar-top-strip: #333a4d;
+
 .header {
-  height: $header-height;
-  background: $primary;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 24px;
   position: sticky;
   top: 0;
   z-index: 100;
+
+  .header-top-strip {
+    height: 4px;
+    background: $tab-bar-top-strip;
+  }
+
+  .header-main {
+    height: 40px;
+    background: $tab-bar-bg;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+  }
+
+  .header-tabs {
+    align-self: stretch;
+    flex: 1;
+    min-height: 40px;
+    height: 40px;
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .header-tabs.ca-tabs {
+    display: flex;
+  }
+
+  .ca-tab {
+    color: rgba(255, 255, 255, 0.95);
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 0.875rem;
+    min-height: 40px;
+    height: 40px;
+    padding: 0 1rem;
+    background: none;
+    border: none;
+    border-bottom: 4px solid transparent;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+
+    &:hover:not(.ca-tab--disabled) {
+      color: #fff;
+    }
+
+    &.ca-tab--selected {
+      color: #fff;
+      background-color: #2f59a6;
+      border-bottom-color: #fff;
+    }
+
+    &.ca-tab--disabled {
+      opacity: 0.5;
+      cursor: default;
+    }
+  }
 
   .left {
     display: flex;
@@ -36,32 +94,6 @@
     font-size: 14px;
     letter-spacing: 0.05em;
     color: white;
-  }
-
-  .nav {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-  }
-
-  .link {
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 14px;
-    font-weight: 500;
-    padding: 8px 14px;
-    border-radius: 4px;
-    transition:
-      background 0.2s,
-      color 0.2s;
-    &:hover {
-      color: white;
-      background: rgba(255, 255, 255, 0.08);
-    }
-    &.active {
-      color: white;
-      border-bottom: 2px solid $accent;
-      border-radius: 0;
-    }
   }
 
   .right {

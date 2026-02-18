@@ -18,8 +18,8 @@ describe('Header', () => {
     expect(screen.getByText('Home')).toBeInTheDocument();
     expect(screen.getByText('Templates')).toBeInTheDocument();
 
-    const templatesLink = screen.getByText('Templates');
-    expect(templatesLink).toHaveClass('active');
+    const templatesTab = screen.getByRole('tab', { name: /templates/i });
+    expect(templatesTab).toHaveAttribute('aria-selected', 'true');
   });
 
   it('shows user initial in avatar', () => {
