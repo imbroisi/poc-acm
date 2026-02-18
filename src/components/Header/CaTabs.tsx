@@ -1,6 +1,7 @@
 import type { KeyboardEvent, ReactElement, ReactNode, SyntheticEvent } from 'react';
 import { Children, cloneElement, isValidElement } from 'react';
 import type { CaTabProps } from './CaTab';
+import './CaTabs.scss';
 
 export interface CaTabsProps {
   value: string;

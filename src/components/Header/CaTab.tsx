@@ -1,4 +1,5 @@
 import type { ButtonHTMLAttributes, ReactNode } from 'react';
+import './CaTab.scss';
 
 export interface CaTabProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'onChange'> {
   value: string;
@@ -9,7 +10,7 @@ export interface CaTabProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>
 }
 
 export const CaTab = ({
-  value,  
+  value,
   label,
   selected = false,
   disabled = false,

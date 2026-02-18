@@ -30,6 +30,8 @@ export const Header = ({ user }: HeaderProps) => {
   const navigate = useNavigate();
   const tabValue = getTabValue(location.pathname);
 
+  console.log('tabValue', tabValue);
+
   return (
     <header className="header">
       <div className="header-top-strip" />

@@ -25,48 +25,6 @@ $tab-bar-top-strip: #333a4d;
   .header-tabs {
     align-self: stretch;
     flex: 1;
-    min-height: 40px;
-    height: 40px;
-    display: flex;
-    align-items: stretch;
-    gap: 0;
-  }
-
-  .header-tabs.ca-tabs {
-    display: flex;
-  }
-
-  .ca-tab {
-    color: rgba(255, 255, 255, 0.95);
-    text-transform: uppercase;
-    font-weight: 500;
-    font-size: 0.875rem;
-    min-height: 40px;
-    height: 40px;
-    padding: 0 1rem;
-    background: none;
-    border: none;
-    border-bottom: 4px solid transparent;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 1;
-
-    &:hover:not(.ca-tab--disabled) {
-      color: #fff;
-    }
-
-    &.ca-tab--selected {
-      color: #fff;
-      background-color: #2f59a6;
-      border-bottom-color: #fff;
-    }
-
-    &.ca-tab--disabled {
-      opacity: 0.5;
-      cursor: default;
-    }
   }
 
   .left {
