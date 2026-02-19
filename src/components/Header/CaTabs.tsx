@@ -30,7 +30,10 @@ export const CaTabs = ({ value, onChange, children, className = '' }: CaTabsProp
     }
 
     const nextTab = tabs[nextIndex];
-    if (nextTab.props.disabled) return;
+
+    if (nextTab.props.disabled) {
+      return;
+    }
 
     onChange(event, nextTab.props.value);
   };
@@ -39,7 +42,6 @@ export const CaTabs = ({ value, onChange, children, className = '' }: CaTabsProp
     cloneElement(tab, {
       selected: tab.props.value === value,
       onSelect: (event) => {
-        if (tab.props.disabled) return;
         onChange?.(event, tab.props.value);
         tab.props.onClick?.(event);
       },
