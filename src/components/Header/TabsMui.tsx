@@ -12,6 +12,7 @@ interface TabsMuiProps {
   onChange: (newValue: string) => void;
   dataTabs: DataTabs[];
   enableIndicatorAnimation?: boolean;
+  color?: string;
 }
 
 export const TabsMui = ({
@@ -19,6 +20,7 @@ export const TabsMui = ({
   onChange,
   dataTabs,
   enableIndicatorAnimation = false,
+  color,
 }: TabsMuiProps) => (
   <Tabs
     value={value}
@@ -27,6 +29,7 @@ export const TabsMui = ({
     scrollButtons="auto"
     sx={[
       tabsSx,
+      ...(color ? [{ backgroundColor: color }] : []),
       ...(enableIndicatorAnimation ? [] : [{ '& .MuiTabs-indicator': { transition: 'none' } }]),
     ]}
     // className="header-tabs"
