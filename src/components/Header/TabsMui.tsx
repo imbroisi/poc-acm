@@ -13,6 +13,7 @@ interface TabsMuiProps {
   dataTabs: DataTabs[];
   enableIndicatorAnimation?: boolean;
   color?: string;
+  selectedColor?: string;
 }
 
 export const TabsMui = ({
@@ -21,6 +22,7 @@ export const TabsMui = ({
   dataTabs,
   enableIndicatorAnimation = false,
   color,
+  selectedColor,
 }: TabsMuiProps) => (
   <Tabs
     value={value}
@@ -29,7 +31,7 @@ export const TabsMui = ({
     scrollButtons="auto"
     sx={[
       tabsSx,
-      ...(color ? [{ backgroundColor: color }] : []),
+      ...(color ? [{ color: color }] : []),
       ...(enableIndicatorAnimation ? [] : [{ '& .MuiTabs-indicator': { transition: 'none' } }]),
     ]}
     // className="header-tabs"
@@ -39,7 +41,11 @@ export const TabsMui = ({
         key={value}
         value={value}
         label={label}
-        sx={[tabSx, ...(enableIndicatorAnimation ? [] : [{ transition: 'none' }])]}
+        sx={[
+          tabSx,
+          ...(enableIndicatorAnimation ? [] : [{ transition: 'none' }]),
+          ...(selectedColor ? [{ '&.Mui-selected': { color: selectedColor } }] : []),
+        ]}
         disableRipple
         disableFocusRipple
       />

@@ -44,6 +44,7 @@ export const Header = ({ user }: HeaderProps) => {
           onChange={(newValue: string) => navigate(newValue)}
           dataTabs={dataTabs}
           enableIndicatorAnimation
+          color="yellow"
         />
 
         <div className="right">
