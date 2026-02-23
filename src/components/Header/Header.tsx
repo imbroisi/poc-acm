@@ -1,24 +1,23 @@
 import { useNavigate, useLocation } from 'react-router-dom';
 import type { User } from '@/types/content';
 import { IconMenu, IconSearch, IconBell } from '@/icons';
-import { CaTab } from './CaTab';
-import { CaTabs } from './CaTabs';
+import { TabsMui } from '@/components/Header/TabsMui';
 import './Header.scss';
 
-const NAV_LINKS = [
-  { to: '/', label: 'Home' },
-  { to: '/content-library', label: 'Content Library' },
-  { to: '/templates', label: 'Templates' },
-  { to: '/meeting-workspace', label: 'Meeting Workspace' },
-  { to: '/my-books', label: 'My Books' },
-  { to: '/admin', label: 'Admin' },
+const dataTabs = [
+  { value: '/', label: 'Home' },
+  { value: '/content-library', label: 'Content Library' },
+  { value: '/templates', label: 'Templates' },
+  { value: '/meeting-workspace', label: 'Meeting Workspace' },
+  { value: '/my-books', label: 'My Books' },
+  { value: '/admin', label: 'Admin' },
 ];
 
 function getTabValue(pathname: string): string {
-  const exact = NAV_LINKS.find((l) => l.to === pathname);
-  if (exact) return exact.to;
-  const prefix = NAV_LINKS.find((l) => l.to !== '/' && pathname.startsWith(l.to));
-  return prefix?.to ?? pathname;
+  const exact = dataTabs.find((l) => l.value === pathname);
+  if (exact) return exact.value;
+  const prefix = dataTabs.find((l) => l.value !== '/' && pathname.startsWith(l.value));
+  return prefix?.value ?? pathname;
 }
 
 interface HeaderProps {
@@ -30,8 +29,6 @@ export const Header = ({ user }: HeaderProps) => {
   const navigate = useNavigate();
   const tabValue = getTabValue(location.pathname);
 
-  console.log('tabValue', tabValue);
-
   return (
     <header className="header">
       <div className="header-top-strip" />
@@ -42,15 +39,12 @@ export const Header = ({ user }: HeaderProps) => {
           </button>
           <span className="logo">CLIENT MATERIALS</span>
         </div>
-        <CaTabs
+        <TabsMui
           value={tabValue}
-          onChange={(_, newValue) => navigate(newValue)}
-          className="header-tabs"
-        >
-          {NAV_LINKS.map(({ to, label }) => (
-            <CaTab key={to} value={to} label={label} />
-          ))}
-        </CaTabs>
+          onChange={(newValue: string) => navigate(newValue)}
+          dataTabs={dataTabs}
+        />
+
         <div className="right">
           <button type="button" className="btn">
             <span className="btn-icon">+</span>
