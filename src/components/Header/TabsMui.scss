@@ -1,0 +1,43 @@
+@use 'styles/variables' as *;
+
+.tabs-mui {
+  flex: 1;
+  min-height: 40px !important;
+  height: 40px !important;
+
+  .MuiTabs-flexContainer {
+    gap: 0;
+  }
+
+  .MuiTabs-indicator {
+    background-color: #fff;
+    height: 4px;
+  }
+
+  .MuiTabs-scroller {
+    flex: 1;
+  }
+
+  &-tab {
+    color: rgba(255, 255, 255, 0.95) !important;
+    font-weight: 500;
+    font-size: 0.875rem;
+    text-transform: none;
+    min-height: 40px !important;
+    height: 40px !important;
+    padding-top: 0;
+    padding-bottom: 0;
+
+    .MuiTab-wrapper {
+      line-height: 1;
+      align-items: center;
+      justify-content: center;
+      display: inline-flex;
+    }
+
+    &.Mui-selected {
+      color: #fff !important;
+      background-color: #2f59a6;
+    }
+  }
+}

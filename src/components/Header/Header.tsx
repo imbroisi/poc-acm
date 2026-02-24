@@ -43,7 +43,7 @@ export const Header = ({ user }: HeaderProps) => {
           value={tabValue}
           onChange={(newValue: string) => navigate(newValue)}
           dataTabs={dataTabs}
-          enableIndicatorAnimation
+          // enableIndicatorAnimation
           color="yellow"
         />
 

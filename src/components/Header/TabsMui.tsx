@@ -1,6 +1,6 @@
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
-import { tabsSx, tabSx } from './TabsMui.styles';
+import './TabsMui.scss';
 
 interface DataTabs {
   value: string;
@@ -29,22 +29,21 @@ export const TabsMui = ({
     onChange={(_, newValue: string) => onChange(newValue)}
     variant="scrollable"
     scrollButtons="auto"
+    className="tabs-mui"
     sx={[
-      tabsSx,
-      ...(color ? [{ color: color }] : []),
+      ...(color ? [{ color }] : []),
       ...(enableIndicatorAnimation ? [] : [{ '& .MuiTabs-indicator': { transition: 'none' } }]),
     ]}
-    // className="header-tabs"
   >
     {dataTabs.map(({ value, label }) => (
       <Tab
         key={value}
         value={value}
         label={label}
+        className="tabs-mui-tab"
         sx={[
-          tabSx,
           ...(enableIndicatorAnimation ? [] : [{ transition: 'none' }]),
-          ...(selectedColor ? [{ '&.Mui-selected': { color: selectedColor } }] : []),
+          ...(selectedColor ? [{ '&.Mui-selected': { backgroundColor: selectedColor } }] : []),
         ]}
         disableRipple
         disableFocusRipple
